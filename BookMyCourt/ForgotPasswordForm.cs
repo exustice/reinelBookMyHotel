@@ -24,6 +24,14 @@ namespace BookMyCourt
         private void submitBtn_Click(object sender, EventArgs e)
         {
             string email = inputBox.Text.Trim();
+            string secretAnswer = secretAnswerBox.Text.Trim();
+
+            // Check if the input box is empty
+            if (string.IsNullOrEmpty(secretAnswer))
+            {
+                MessageBox.Show("Please enter the secret answer.");
+                return;
+            }
 
             // Connect to the database
             string connectionString = @"Data Source=DESKTOP-JJULN80\SQLEXPRESS;Initial Catalog=DBbooking;Integrated Security=true;";
@@ -31,8 +39,8 @@ namespace BookMyCourt
             {
                 connection.Open();
 
-                // Check if the email exists in the database
-                string query = "SELECT secretQuestions FROM Users WHERE email = @Email";
+                // Check if the email and secret answer are correct
+                string query = "SELECT secretAnswer FROM Users WHERE email = @Email";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Email", email);
 
@@ -40,15 +48,27 @@ namespace BookMyCourt
 
                 if (result != null)
                 {
-                    // Email exists in the database, retrieve the secret question
-                    string secretQuestion = result.ToString();
+                    string storedSecretAnswer = result.ToString();
 
-                    // Hide the controls and show the secret question label
-                    emailLabel.Visible = false;
-                    secretQuestionLabel.Visible = true;
-                    secretQuestionLabel.Text = secretQuestion;
-                    inputBox.Clear();
+                    if (storedSecretAnswer.Equals(secretAnswer))
+                    {
+                        // Secret answer is correct, allow password reset
+                        MessageBox.Show("Secret answer is correct. You can now reset your password.");
 
+                        // Display password reset controls (assuming you have appropriate controls on your form)
+                        secretQuestionLabel.Visible = false;
+                        secretAnswerBox.Visible = false;
+                        newPasswordlbl.Visible = true;
+                        newPasswordBox.Visible = true;
+                        confirmPasswordlbl.Visible = true;
+                        confirmPasswordBox.Visible = true;
+                        resetPasswordButton.Visible = true;
+                    }
+                    else
+                    {
+                        // Secret answer is incorrect
+                        MessageBox.Show("Secret answer is incorrect. Please try again.");
+                    }
                 }
                 else
                 {

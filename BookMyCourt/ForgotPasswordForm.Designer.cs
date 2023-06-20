@@ -32,6 +32,11 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.secretQuestionLabel = new System.Windows.Forms.Label();
+            this.confirmPasswordBox = new System.Windows.Forms.TextBox();
+            this.newPasswordBox = new System.Windows.Forms.TextBox();
+            this.resetPasswordButton = new System.Windows.Forms.Button();
+            this.newPasswordlbl = new System.Windows.Forms.Label();
+            this.confirmPasswordlbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // inputBox
@@ -70,11 +75,62 @@
             this.secretQuestionLabel.Text = "Secret Question";
             this.secretQuestionLabel.Visible = false;
             // 
+            // confirmPasswordBox
+            // 
+            this.confirmPasswordBox.Location = new System.Drawing.Point(140, 191);
+            this.confirmPasswordBox.Name = "confirmPasswordBox";
+            this.confirmPasswordBox.Size = new System.Drawing.Size(183, 20);
+            this.confirmPasswordBox.TabIndex = 4;
+            this.confirmPasswordBox.Visible = false;
+            // 
+            // newPasswordBox
+            // 
+            this.newPasswordBox.Location = new System.Drawing.Point(140, 146);
+            this.newPasswordBox.Name = "newPasswordBox";
+            this.newPasswordBox.Size = new System.Drawing.Size(183, 20);
+            this.newPasswordBox.TabIndex = 5;
+            this.newPasswordBox.Visible = false;
+            // 
+            // resetPasswordButton
+            // 
+            this.resetPasswordButton.Location = new System.Drawing.Point(192, 247);
+            this.resetPasswordButton.Name = "resetPasswordButton";
+            this.resetPasswordButton.Size = new System.Drawing.Size(75, 23);
+            this.resetPasswordButton.TabIndex = 6;
+            this.resetPasswordButton.Text = "Reset";
+            this.resetPasswordButton.UseVisualStyleBackColor = true;
+            this.resetPasswordButton.Visible = false;
+            // 
+            // newPasswordlbl
+            // 
+            this.newPasswordlbl.AutoSize = true;
+            this.newPasswordlbl.Location = new System.Drawing.Point(174, 130);
+            this.newPasswordlbl.Name = "newPasswordlbl";
+            this.newPasswordlbl.Size = new System.Drawing.Size(106, 13);
+            this.newPasswordlbl.TabIndex = 7;
+            this.newPasswordlbl.Text = "Enter New Password";
+            this.newPasswordlbl.Visible = false;
+            // 
+            // confirmPasswordlbl
+            // 
+            this.confirmPasswordlbl.AutoSize = true;
+            this.confirmPasswordlbl.Location = new System.Drawing.Point(174, 175);
+            this.confirmPasswordlbl.Name = "confirmPasswordlbl";
+            this.confirmPasswordlbl.Size = new System.Drawing.Size(116, 13);
+            this.confirmPasswordlbl.TabIndex = 8;
+            this.confirmPasswordlbl.Text = "Confirm New Password";
+            this.confirmPasswordlbl.Visible = false;
+            // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 307);
+            this.Controls.Add(this.confirmPasswordlbl);
+            this.Controls.Add(this.newPasswordlbl);
+            this.Controls.Add(this.resetPasswordButton);
+            this.Controls.Add(this.newPasswordBox);
+            this.Controls.Add(this.confirmPasswordBox);
             this.Controls.Add(this.secretQuestionLabel);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.emailLabel);
@@ -93,5 +149,10 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Label secretQuestionLabel;
+        private System.Windows.Forms.TextBox confirmPasswordBox;
+        private System.Windows.Forms.TextBox newPasswordBox;
+        private System.Windows.Forms.Button resetPasswordButton;
+        private System.Windows.Forms.Label newPasswordlbl;
+        private System.Windows.Forms.Label confirmPasswordlbl;
     }
 }
