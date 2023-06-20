@@ -24,7 +24,7 @@ namespace BookMyCourt
 
         public ComboBox SecretQuestionComboBox
         {
-            get { return combosecreQuest; }
+            get { return secretQuest; }
         }
         private void btnRegistration_Click(object sender, EventArgs e)
         {
@@ -131,12 +131,12 @@ namespace BookMyCourt
 
         public string SelectedSecretQuestion
         {
-            get { return combosecreQuest.SelectedItem.ToString(); }
+            get { return secretQuest.SelectedItem.ToString(); }
         }
 
         public string SecretAnswer
         {
-            get { return txtSecretAnswer.Text; }
+            get { return secretAns.Text; }
         }
     }
 }

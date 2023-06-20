@@ -35,7 +35,7 @@ namespace BookMyCourt
 
             }
 
-           else if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
+            else if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
                 // Connect to the database
                 string connectionString = @"Data Source=DESKTOP-JJULN80\SQLEXPRESS;Initial Catalog=DBbooking;Integrated Security=true;";
@@ -88,7 +88,7 @@ namespace BookMyCourt
 
 
             }
-         
+
 
             else
             {
@@ -106,90 +106,9 @@ namespace BookMyCourt
 
         private void forgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (registrationForm == null)
-            {
-                MessageBox.Show("Registration form is not available.");
-                return;
-            }
-
-            // Access the registrationForm's properties
-            string secretQuestion = registrationForm.SelectedSecretQuestion;
-            string secretAnswer = registrationForm.SecretAnswer;
-
-            string email = txtEmail.Text;
-
-
-            string connectionString = @"Data Source=DESKTOP-JJULN80\SQLEXPRESS;Initial Catalog=DBbooking;Integrated Security=true;";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                // Check if the email exists in the database
-                string query = "SELECT secretQuestion, secretAnswer FROM Users WHERE email = @Email";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Email", email);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    string storedSecretQuestion = reader["secretQuestion"].ToString();
-                    string storedSecretAnswer = reader["secretAnswer"].ToString();
-
-                    if (secretQuestion.Equals(storedSecretQuestion) && secretAnswer.Equals(storedSecretAnswer))
-                    {
-                        // Secret question and answer are correct, allow password reset
-                        string newPassword = GenerateRandomPassword(); // Replace this with your password reset logic
-
-                        // Update the password in the database
-                        query = "UPDATE Users SET password = @NewPassword WHERE email = @Email";
-                        command = new SqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@NewPassword", newPassword);
-                        command.Parameters.AddWithValue("@Email", email);
-
-                        int result = command.ExecuteNonQuery();
-
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Password reset successful. Your new password is: " + newPassword);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Password reset failed. Please try again.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect secret question or answer. Please try again.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Email not found. Please enter a valid email address.");
-                }
-
-                reader.Close();
-            }
+            ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm(registrationForm);
+            forgotPasswordForm.Show();
+            this.Hide();
         }
-
-        private string GenerateRandomPassword()
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var random = new Random();
-            var newPassword = new string(
-                Enumerable.Repeat(chars, 10)
-                          .Select(s => s[random.Next(s.Length)])
-                          .ToArray());
-
-            return newPassword;
-        }
-
-        // Event handler for the "Forgot Password" link label
-        private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-
     }
 }

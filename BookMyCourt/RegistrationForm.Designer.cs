@@ -44,9 +44,9 @@
             this.termsLabel = new System.Windows.Forms.Label();
             this.termsCheckBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.combosecreQuest = new System.Windows.Forms.ComboBox();
+            this.secretQuest = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSecretAnswer = new System.Windows.Forms.TextBox();
+            this.secretAns = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -189,17 +189,17 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Select Security Question";
             // 
-            // combosecreQuest
+            // secretQuest
             // 
-            this.combosecreQuest.FormattingEnabled = true;
-            this.combosecreQuest.Items.AddRange(new object[] {
+            this.secretQuest.FormattingEnabled = true;
+            this.secretQuest.Items.AddRange(new object[] {
             "What is the name of your first pet?",
             "Who do you aspire to be when you were a child?",
             "What is your mother\'s maiden name?"});
-            this.combosecreQuest.Location = new System.Drawing.Point(156, 283);
-            this.combosecreQuest.Name = "combosecreQuest";
-            this.combosecreQuest.Size = new System.Drawing.Size(175, 21);
-            this.combosecreQuest.TabIndex = 16;
+            this.secretQuest.Location = new System.Drawing.Point(156, 283);
+            this.secretQuest.Name = "secretQuest";
+            this.secretQuest.Size = new System.Drawing.Size(175, 21);
+            this.secretQuest.TabIndex = 16;
             // 
             // label8
             // 
@@ -210,12 +210,12 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Answer";
             // 
-            // txtSecretAnswer
+            // secretAns
             // 
-            this.txtSecretAnswer.Location = new System.Drawing.Point(231, 327);
-            this.txtSecretAnswer.Name = "txtSecretAnswer";
-            this.txtSecretAnswer.Size = new System.Drawing.Size(100, 20);
-            this.txtSecretAnswer.TabIndex = 19;
+            this.secretAns.Location = new System.Drawing.Point(231, 327);
+            this.secretAns.Name = "secretAns";
+            this.secretAns.Size = new System.Drawing.Size(100, 20);
+            this.secretAns.TabIndex = 19;
             // 
             // RegistrationForm
             // 
@@ -223,9 +223,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(500, 513);
-            this.Controls.Add(this.txtSecretAnswer);
+            this.Controls.Add(this.secretAns);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.combosecreQuest);
+            this.Controls.Add(this.secretQuest);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.termsCheckBox);
             this.Controls.Add(this.termsLabel);
@@ -269,8 +269,8 @@
         private System.Windows.Forms.Label termsLabel;
         private System.Windows.Forms.CheckBox termsCheckBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox combosecreQuest;
+        private System.Windows.Forms.ComboBox secretQuest;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSecretAnswer;
+        private System.Windows.Forms.TextBox secretAns;
     }
 }
