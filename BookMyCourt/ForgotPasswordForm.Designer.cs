@@ -28,113 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.inputBox = new System.Windows.Forms.TextBox();
-            this.emailLabel = new System.Windows.Forms.Label();
+            this.txtBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.secretQuestionLabel = new System.Windows.Forms.Label();
-            this.confirmPasswordBox = new System.Windows.Forms.TextBox();
-            this.newPasswordBox = new System.Windows.Forms.TextBox();
+            this.secretAnswerTextBox = new System.Windows.Forms.TextBox();
+            this.newPasswordLabel = new System.Windows.Forms.Label();
+            this.confirmPasswordLabel = new System.Windows.Forms.Label();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.confirmPasswordTextBox = new System.Windows.Forms.TextBox();
             this.resetPasswordButton = new System.Windows.Forms.Button();
-            this.newPasswordlbl = new System.Windows.Forms.Label();
-            this.confirmPasswordlbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // inputBox
+            // txtBox
             // 
-            this.inputBox.Location = new System.Drawing.Point(140, 101);
-            this.inputBox.Name = "inputBox";
-            this.inputBox.Size = new System.Drawing.Size(183, 20);
-            this.inputBox.TabIndex = 0;
+            this.txtBox.Location = new System.Drawing.Point(138, 128);
+            this.txtBox.Name = "txtBox";
+            this.txtBox.Size = new System.Drawing.Size(193, 20);
+            this.txtBox.TabIndex = 0;
             // 
-            // emailLabel
+            // label1
             // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(196, 65);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(60, 13);
-            this.emailLabel.TabIndex = 1;
-            this.emailLabel.Text = "Enter Email";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(135, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Enter Email";
             // 
             // submitBtn
             // 
-            this.submitBtn.Location = new System.Drawing.Point(192, 162);
+            this.submitBtn.Location = new System.Drawing.Point(195, 257);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(75, 23);
             this.submitBtn.TabIndex = 2;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click_1);
             // 
-            // secretQuestionLabel
+            // secretAnswerTextBox
             // 
-            this.secretQuestionLabel.AutoSize = true;
-            this.secretQuestionLabel.Location = new System.Drawing.Point(137, 78);
-            this.secretQuestionLabel.Name = "secretQuestionLabel";
-            this.secretQuestionLabel.Size = new System.Drawing.Size(83, 13);
-            this.secretQuestionLabel.TabIndex = 3;
-            this.secretQuestionLabel.Text = "Secret Question";
-            this.secretQuestionLabel.Visible = false;
+            this.secretAnswerTextBox.Location = new System.Drawing.Point(138, 173);
+            this.secretAnswerTextBox.Name = "secretAnswerTextBox";
+            this.secretAnswerTextBox.Size = new System.Drawing.Size(193, 20);
+            this.secretAnswerTextBox.TabIndex = 3;
+            this.secretAnswerTextBox.Visible = false;
             // 
-            // confirmPasswordBox
+            // newPasswordLabel
             // 
-            this.confirmPasswordBox.Location = new System.Drawing.Point(140, 191);
-            this.confirmPasswordBox.Name = "confirmPasswordBox";
-            this.confirmPasswordBox.Size = new System.Drawing.Size(183, 20);
-            this.confirmPasswordBox.TabIndex = 4;
-            this.confirmPasswordBox.Visible = false;
+            this.newPasswordLabel.AutoSize = true;
+            this.newPasswordLabel.Location = new System.Drawing.Point(135, 64);
+            this.newPasswordLabel.Name = "newPasswordLabel";
+            this.newPasswordLabel.Size = new System.Drawing.Size(106, 13);
+            this.newPasswordLabel.TabIndex = 4;
+            this.newPasswordLabel.Text = "Enter New Password";
+            this.newPasswordLabel.Visible = false;
             // 
-            // newPasswordBox
+            // confirmPasswordLabel
             // 
-            this.newPasswordBox.Location = new System.Drawing.Point(140, 146);
-            this.newPasswordBox.Name = "newPasswordBox";
-            this.newPasswordBox.Size = new System.Drawing.Size(183, 20);
-            this.newPasswordBox.TabIndex = 5;
-            this.newPasswordBox.Visible = false;
+            this.confirmPasswordLabel.AutoSize = true;
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(135, 128);
+            this.confirmPasswordLabel.Name = "confirmPasswordLabel";
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(116, 13);
+            this.confirmPasswordLabel.TabIndex = 5;
+            this.confirmPasswordLabel.Text = "Confirm New Password";
+            this.confirmPasswordLabel.Visible = false;
+            // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.Location = new System.Drawing.Point(138, 80);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(193, 20);
+            this.newPasswordTextBox.TabIndex = 6;
+            this.newPasswordTextBox.Visible = false;
+            // 
+            // confirmPasswordTextBox
+            // 
+            this.confirmPasswordTextBox.Location = new System.Drawing.Point(138, 147);
+            this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
+            this.confirmPasswordTextBox.Size = new System.Drawing.Size(193, 20);
+            this.confirmPasswordTextBox.TabIndex = 7;
+            this.confirmPasswordTextBox.Visible = false;
             // 
             // resetPasswordButton
             // 
-            this.resetPasswordButton.Location = new System.Drawing.Point(192, 247);
+            this.resetPasswordButton.Location = new System.Drawing.Point(195, 199);
             this.resetPasswordButton.Name = "resetPasswordButton";
             this.resetPasswordButton.Size = new System.Drawing.Size(75, 23);
-            this.resetPasswordButton.TabIndex = 6;
+            this.resetPasswordButton.TabIndex = 8;
             this.resetPasswordButton.Text = "Reset";
             this.resetPasswordButton.UseVisualStyleBackColor = true;
             this.resetPasswordButton.Visible = false;
-            // 
-            // newPasswordlbl
-            // 
-            this.newPasswordlbl.AutoSize = true;
-            this.newPasswordlbl.Location = new System.Drawing.Point(174, 130);
-            this.newPasswordlbl.Name = "newPasswordlbl";
-            this.newPasswordlbl.Size = new System.Drawing.Size(106, 13);
-            this.newPasswordlbl.TabIndex = 7;
-            this.newPasswordlbl.Text = "Enter New Password";
-            this.newPasswordlbl.Visible = false;
-            // 
-            // confirmPasswordlbl
-            // 
-            this.confirmPasswordlbl.AutoSize = true;
-            this.confirmPasswordlbl.Location = new System.Drawing.Point(174, 175);
-            this.confirmPasswordlbl.Name = "confirmPasswordlbl";
-            this.confirmPasswordlbl.Size = new System.Drawing.Size(116, 13);
-            this.confirmPasswordlbl.TabIndex = 8;
-            this.confirmPasswordlbl.Text = "Confirm New Password";
-            this.confirmPasswordlbl.Visible = false;
             // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 307);
-            this.Controls.Add(this.confirmPasswordlbl);
-            this.Controls.Add(this.newPasswordlbl);
             this.Controls.Add(this.resetPasswordButton);
-            this.Controls.Add(this.newPasswordBox);
-            this.Controls.Add(this.confirmPasswordBox);
-            this.Controls.Add(this.secretQuestionLabel);
+            this.Controls.Add(this.confirmPasswordTextBox);
+            this.Controls.Add(this.newPasswordTextBox);
+            this.Controls.Add(this.confirmPasswordLabel);
+            this.Controls.Add(this.newPasswordLabel);
+            this.Controls.Add(this.secretAnswerTextBox);
             this.Controls.Add(this.submitBtn);
-            this.Controls.Add(this.emailLabel);
-            this.Controls.Add(this.inputBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBox);
             this.Name = "ForgotPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPasswordForm";
@@ -145,14 +143,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox inputBox;
-        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox txtBox;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button submitBtn;
-        private System.Windows.Forms.Label secretQuestionLabel;
-        private System.Windows.Forms.TextBox confirmPasswordBox;
-        private System.Windows.Forms.TextBox newPasswordBox;
+        private System.Windows.Forms.TextBox secretAnswerTextBox;
+        private System.Windows.Forms.Label newPasswordLabel;
+        private System.Windows.Forms.Label confirmPasswordLabel;
+        private System.Windows.Forms.TextBox newPasswordTextBox;
+        private System.Windows.Forms.TextBox confirmPasswordTextBox;
         private System.Windows.Forms.Button resetPasswordButton;
-        private System.Windows.Forms.Label newPasswordlbl;
-        private System.Windows.Forms.Label confirmPasswordlbl;
     }
 }
