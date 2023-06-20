@@ -118,6 +118,7 @@
             this.resetPasswordButton.Text = "Reset";
             this.resetPasswordButton.UseVisualStyleBackColor = true;
             this.resetPasswordButton.Visible = false;
+            this.resetPasswordButton.Click += new System.EventHandler(this.resetPasswordButton_Click);
             // 
             // ForgotPasswordForm
             // 
