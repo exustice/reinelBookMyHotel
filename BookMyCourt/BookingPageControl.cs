@@ -21,7 +21,8 @@ namespace BookMyCourt
         {
             InitializeComponent();
 
-            
+            datePicker.MinDate = DateTime.Today;
+            dtpEndDate.MinDate = DateTime.Today;
 
 
             // Set the time interval to 1 hour
