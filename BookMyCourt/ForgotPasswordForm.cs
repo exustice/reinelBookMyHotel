@@ -93,6 +93,12 @@ namespace BookMyCourt
             string newPassword = newPasswordTextBox.Text.Trim();
             string confirmedPassword = confirmPasswordTextBox.Text.Trim();
 
+            if (string.IsNullOrEmpty(newPassword))
+            {
+                MessageBox.Show("Please enter a new password.");
+                return; // Exit the event handler without updating the password
+            }
+
             if (newPassword.Equals(confirmedPassword))
             {
                 // Connect to the database
@@ -128,6 +134,7 @@ namespace BookMyCourt
             {
                 // New password and confirmed password do not match
                 MessageBox.Show("New password and confirmed password do not match. Please try again.");
+                return;
             }
         }
 

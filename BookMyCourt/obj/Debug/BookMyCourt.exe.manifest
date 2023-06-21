@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BookMyCourt.exe" size="3744720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BookMyCourt.exe" size="3745232">
       <assemblyIdentity name="BookMyCourt" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7aZHfRVK7lCdLvvgFGsaJhyBSS2gu/Q1ZVhmT58Vd6k=</dsig:DigestValue>
+        <dsig:DigestValue>/s5qSJGfcJcG+VML7fIlW7Q38ySNIGVuABWnIDVi3Z8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

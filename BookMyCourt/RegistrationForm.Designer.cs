@@ -139,6 +139,7 @@
             this.btnRegistration.TabIndex = 10;
             this.btnRegistration.Text = "Register";
             this.btnRegistration.UseVisualStyleBackColor = true;
+            this.btnRegistration.UseWaitCursor = true;
             this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
             // label6

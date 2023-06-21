@@ -20,6 +20,7 @@ namespace BookMyCourt
         public RegistrationForm()
         {
             InitializeComponent();
+            btnRegistration.Enabled = false;
         }
 
         public ComboBox SecretQuestionComboBox
@@ -32,7 +33,7 @@ namespace BookMyCourt
             string firstName = txtFirstName.Text;
             string lastName = txtLastName.Text;
             string password = txtPassword.Text;
-            string secretQuestion = secretQuestions.SelectedItem.ToString();
+            string secretQuestion = secretQuestions.SelectedItem?.ToString();
             string secretAnswer = secretAnswers.Text;
 
             bool isValidEmail = Regex.IsMatch(email, @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
@@ -43,7 +44,17 @@ namespace BookMyCourt
             {
                 MessageBox.Show(txtEmail, "Invalid email address");
             }
-            else if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(password))
+            else if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(password))
+            {
+                // Email, first name, last name, or password is empty
+                MessageBox.Show("Please enter your email, first name, last name, and password.");
+            }
+            else if (string.IsNullOrEmpty(secretQuestion) || string.IsNullOrEmpty(secretAnswer))
+            {
+                // Secret question or secret answer is not filled
+                MessageBox.Show("Please select a secret question and provide an answer.");
+            }
+            else
             {
                 // Connect to the database
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -95,12 +106,8 @@ namespace BookMyCourt
                     }
                 }
             }
-            else
-            {
-                // Email, first name, last name, or password is empty
-                MessageBox.Show("Please enter your email, first name, last name, and password.");
-            }
         }
+
 
 
         private void button1_Click(object sender, EventArgs e)
