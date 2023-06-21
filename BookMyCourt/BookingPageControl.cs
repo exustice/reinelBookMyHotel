@@ -20,8 +20,8 @@ namespace BookMyCourt
         public BookingPageControl()
         {
             InitializeComponent();
-            
 
+            
 
 
             // Set the time interval to 1 hour
@@ -268,6 +268,16 @@ namespace BookMyCourt
             string connectionString = @"Data Source=DESKTOP-JJULN80\SQLEXPRESS;Initial Catalog=DBbooking;Integrated Security=True";
             string query = "INSERT INTO Bookings (ReservationId, Contact#, Name, StartTime, EndTime, Date, RoomType, BedType, Price, EndDate) VALUES (@ReservationId, @Contact#, @Name, @StartTime, @EndTime, @Date, @RoomType, @BedType, @Price, @EndDate)";
 
+            DateTime startDate = datePicker.Value.Date;
+            DateTime endDate = dtpEndDate.Value.Date;
+
+            // Check if the end date is earlier than the start date
+            if (endDate < startDate)
+            {
+                MessageBox.Show("End date cannot be earlier than the start date. Please select a valid end date.");
+                return; // Exit the event handler without proceeding
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -327,6 +337,19 @@ namespace BookMyCourt
             {
                 // Cancel the keypress event if the limit is reached
                 e.Handled = true;
+            }
+        }
+
+        private void dtpEndDate1(object sender, EventArgs e)
+        {
+            DateTime startDate = datePicker.Value.Date;
+            DateTime endDate = dtpEndDate.Value.Date;
+
+            // Check if the end date is earlier than the start date
+            if (endDate < startDate)
+            {
+                MessageBox.Show("End date cannot be earlier than the start date. Please select a valid end date.");
+                dtpEndDate.Value = startDate;
             }
         }
     }

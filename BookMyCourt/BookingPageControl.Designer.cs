@@ -247,6 +247,7 @@
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(172, 20);
             this.dtpEndDate.TabIndex = 43;
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate1);
             // 
             // ReservationIDTextBox
             // 
